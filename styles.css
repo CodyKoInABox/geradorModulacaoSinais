@@ -1,0 +1,21 @@
+body{
+    margin: none;
+    padding: none;
+    background-color: rgb(31, 31, 41);
+    text-align: center;
+}
+.title{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    color: white;
+}
+.text{
+    margin-top: -15px;
+    font-size: small;
+}
+.input{
+    width: 200px;
+}
+.imagecontainer{
+    width: 100%;
+}

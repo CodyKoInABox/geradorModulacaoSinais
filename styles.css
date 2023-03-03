@@ -19,3 +19,6 @@ body{
 .imagecontainer{
     width: 100%;
 }
+img{
+    display: none;
+}

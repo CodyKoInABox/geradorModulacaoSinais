@@ -33,3 +33,11 @@ a:hover{
 img{
     display: none;
 }
+.name{
+    position: fixed;
+    font-size: large;
+    left: 10px;
+    bottom: -5px;
+    font-weight: 500;
+
+}

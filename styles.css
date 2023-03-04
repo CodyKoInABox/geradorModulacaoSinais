@@ -26,9 +26,8 @@ a:hover{
     width: 200px;
 }
 .imagecontainer{
-    width: 100%;
+    width: fit-content;
     display: flex;
-    justify-content: center;
 }
 img{
     display: none;

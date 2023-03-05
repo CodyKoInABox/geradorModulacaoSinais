@@ -4,10 +4,7 @@
 const { jsPDF } = window.jspdf;
 
 let doc;
-let binaryArray = [];
-let binaryIMGArray = [];
-let amplitudeIMGArray = [];
-let frequencyIMGArray = [];
+let counter;
 
 //funcao chamada quando no clique do botao de baixar PDF, ela so serve para chamar as outras funcoes
 function downloadPDF(){
@@ -46,21 +43,12 @@ function template(){
     doc.addImage("assets/qrCode.png", "PNG", 278.5, 191.5, 18, 18)
 }
 
-//funcao que "transfere as imagens (graficos) do HTML para o PDF"
+//funcao que conta quantas imagens existem no HTML, ou seja, quantas "partes" de grafico estao sendo mostradas
 function getImages(){
-    binaryArray = [];
-    binaryIMGArray = [];
-    amplitudeIMGArray = [];
-    frequencyIMGArray = [];
-
-    //pega a source de cada imagem do grafico e salva elas em uma array para poder adicionar elas ao PDF
-    //as arrays nao sao necessarias e provavelmente so estao servindo para deixar o site mais lento mas no futuro otimizo isso
+    counter = 0
     for(let i = 1; i <= 80; i++){
         if(document.getElementById("binary"+i).style.display == "inline"){
-            binaryArray.push(document.getElementById("binary"+i).src);
-            binaryIMGArray.push(document.getElementById("binaryIMG"+i).src);
-            amplitudeIMGArray.push(document.getElementById("amplitudeIMG"+i).src);
-            frequencyIMGArray.push(document.getElementById("frequencyIMG"+i).src);
+            counter++;
         }
         else{
             i=81;
@@ -70,19 +58,25 @@ function getImages(){
 
 //funcao que adiciona as imgens (graficos) ao PDF
 function addImages(){
-    for(let j = 0; j < binaryArray.length; j++){
+    for(let j = 1; j <= counter; j++){
+        //pega a source de cada imagem do grafico e salva elas em uma variavel para que a parte do "doc.addImage" fique mais organizada
+        let binary = document.getElementById("binary"+j).src;
+        let binaryIMG = document.getElementById("binaryIMG"+j).src;
+        let amplitudeIMG = document.getElementById("amplitudeIMG"+j).src;
+        let frequencyIMG = document.getElementById("frequencyIMG"+i).src;
+
         //multiplica o tamanho de cada imagen (3.7mm) pelo numero total de imagens ja impressas e soma isso com 0.5mm (a margem entre a primeira imagem e a borda do PDF) para colocar as imagens uma do lado da outra  
         let locationX = 0.5 + j * 3.7;
         let size = 3.7;
 
         //binary
-        doc.addImage(binaryArray[j], "PNG", locationX, 30, size, size)
+        doc.addImage(binary, "PNG", locationX, 30, size, size)
         //binary Image
-        doc.addImage(binaryIMGArray[j], "PNG", locationX, 40, size, size)
+        doc.addImage(binaryIMG, "PNG", locationX, 40, size, size)
         //amplitude
-        doc.addImage(amplitudeIMGArray[j], "PNG", locationX, 50, size, size)
+        doc.addImage(amplitudeIMG, "PNG", locationX, 50, size, size)
         //frequency
-        doc.addImage(frequencyIMGArray[j], "PNG", locationX, 60, size, size)
+        doc.addImage(frequencyIMG, "PNG", locationX, 60, size, size)
     }
 }
 

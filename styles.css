@@ -7,7 +7,6 @@ body{
 }
 .title{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
     color: white;
 }
 .text{
@@ -39,7 +38,6 @@ img{
     left: 10px;
     bottom: -5px;
     font-weight: 500;
-
 }
 #buttonPDF{
     margin-top: 40px;

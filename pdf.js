@@ -63,7 +63,7 @@ function addImages(){
         let binary = document.getElementById("binary"+j).src;
         let binaryIMG = document.getElementById("binaryIMG"+j).src;
         let amplitudeIMG = document.getElementById("amplitudeIMG"+j).src;
-        let frequencyIMG = document.getElementById("frequencyIMG"+i).src;
+        let frequencyIMG = document.getElementById("frequencyIMG"+j).src;
 
         //multiplica o numero da imagem na sequencia (primeira, segunda, terceira...) pelo tamanho (3.7mm) e depois diminiu 3.4 (diminiu 3.7 para compensar a sequencia iniciar do primeiro e adiciona 0.3 para deixar uma margem da borda do PDF)
         let locationX = j * 3.7 - 3.4;

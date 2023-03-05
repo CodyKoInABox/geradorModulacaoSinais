@@ -40,7 +40,7 @@ function template(){
     doc.text("Criado usando codykoinabox.github.io/geradorModulacaoSinais", 0.5, 209);
 
     //coloca um QR Code levando ao GitHub no canto inferior direito
-    doc.addImage("assets/qrCode.png", "PNG", 278.5, 191.5, 18, 18)
+    doc.addImage("assets/qrCode.png", "PNG", 274.5, 187.5, 22, 22)
 }
 
 //funcao que conta quantas imagens existem no HTML, ou seja, quantas "partes" de grafico estao sendo mostradas
@@ -65,8 +65,8 @@ function addImages(){
         let amplitudeIMG = document.getElementById("amplitudeIMG"+j).src;
         let frequencyIMG = document.getElementById("frequencyIMG"+i).src;
 
-        //multiplica o tamanho de cada imagen (3.7mm) pelo numero total de imagens ja impressas e soma isso com 0.5mm (a margem entre a primeira imagem e a borda do PDF) para colocar as imagens uma do lado da outra  
-        let locationX = 0.5 + j * 3.7;
+        //multiplica o numero da imagem na sequencia (primeira, segunda, terceira...) pelo tamanho (3.7mm) e depois diminiu 3.4 (diminiu 3.7 para compensar a sequencia iniciar do primeiro e adiciona 0.3 para deixar uma margem da borda do PDF)
+        let locationX = j * 3.7 - 3.4;
         let size = 3.7;
 
         //binary

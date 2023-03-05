@@ -3,7 +3,7 @@ function main(){
     //pega o texto que o usuario colocou no input
     let input = document.getElementById("input").value;
     
-    //esse loop limpa as imagesns da tela, o numero 80 ali significa a quantidade maxima de caracteres binarios, ou seja, o numero maximo de "partes de grafico" possiveis em cada categoria
+    //esse loop tira as imagens da tela, o numero 80 ali significa a quantidade maxima de caracteres binarios, ou seja, o numero maximo de "partes de grafico" possiveis em cada categoria
     for(l = 1; l <= 80; l++){
 
         //hide binary numbers
@@ -17,6 +17,7 @@ function main(){
 
         //hide frequency modulation
         document.getElementById("frequencyIMG"+l).style.display = "none";
+
     }
 
     //chama a funcao que mostra as imagens, e envia para ela o input do usuario em forma de valor binario
@@ -91,7 +92,6 @@ function printImages(input){
 
             
             let neighbors = testNeighbors(temp[j], input, counter);
-            console.log("neighbors="+neighbors)
 
             //show binary numbers
             document.getElementById("binary"+counter).style.display = "inline"; 
@@ -109,5 +109,13 @@ function printImages(input){
             document.getElementById("frequencyIMG"+counter).style.display = "inline"; 
             document.getElementById("frequencyIMG"+counter).src="assets/frequencyIMG"+temp[j]+".png";
         }
+    }
+
+    //isso faz com que o botao de baixar PDF suma quando o input esta vazio
+    if(input==""){
+        document.getElementById("buttonPDF").style.display = "none";
+    }
+    else{
+        document.getElementById("buttonPDF").style.display = "inline";
     }
 }

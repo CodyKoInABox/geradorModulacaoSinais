@@ -40,7 +40,7 @@ function template(){
 
     //coloca o link do github no canto inferior esquerdo com um fonte menor do que a titulo
     doc.setFontSize(9);
-    doc.text("Criado usando codykoinabox.github.io/geradorModulacaoSinais.", 0.5, 209);
+    doc.text("Criado usando codykoinabox.github.io/geradorModulacaoSinais", 0.5, 209);
 
     //coloca um QR Code levando ao GitHub no canto inferior direito
     doc.addImage("assets/qrCode.png", "PNG", 278.5, 191.5, 18, 18)

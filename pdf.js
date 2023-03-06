@@ -65,14 +65,11 @@ function addImages(){
         let amplitudeIMG = document.getElementById("amplitudeIMG"+j).src;
         let frequencyIMG = document.getElementById("frequencyIMG"+j).src;
         let phaseIMG = document.getElementById("phaseIMG"+j).src;
-
-        //multiplica o numero da imagem na sequencia (primeira, segunda, terceira...) pelo tamanho (3.7mm) e depois diminiu 3.4 (diminiu 3.7 para compensar a sequencia iniciar do primeiro e adiciona 0.3 para deixar uma margem da borda do PDF)
-        //let locationX = j * 3.7 - 3.4;
-        //let size = 3.7;
-
+        
+        //faz varias contas para mudar o tamanho do grafico dependendo da extensao do mesmo, tambem centraliza ele
+        //depois arrumo esse comentario para explicar o que cada coisa faz
         let size = parseFloat(Math.min(8, Math.max(3.7, 297 / counter )).toFixed(1));
         let margin = (297 - size * counter) / 2;
-        console.log(size);
         let locationX = margin + j * size - size;
 
         //binary

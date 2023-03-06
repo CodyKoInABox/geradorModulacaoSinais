@@ -64,19 +64,22 @@ function addImages(){
         let binaryIMG = document.getElementById("binaryIMG"+j).src;
         let amplitudeIMG = document.getElementById("amplitudeIMG"+j).src;
         let frequencyIMG = document.getElementById("frequencyIMG"+j).src;
+        let phaseIMG = document.getElementById("phaseIMG"+j).src;
 
         //multiplica o numero da imagem na sequencia (primeira, segunda, terceira...) pelo tamanho (3.7mm) e depois diminiu 3.4 (diminiu 3.7 para compensar a sequencia iniciar do primeiro e adiciona 0.3 para deixar uma margem da borda do PDF)
         let locationX = j * 3.7 - 3.4;
         let size = 3.7;
 
         //binary
-        doc.addImage(binary, "PNG", locationX, 30, size, size)
+        doc.addImage(binary, "PNG", locationX, 30, size, size);
         //binary Image
-        doc.addImage(binaryIMG, "PNG", locationX, 40, size, size)
+        doc.addImage(binaryIMG, "PNG", locationX, 40, size, size);
         //amplitude
-        doc.addImage(amplitudeIMG, "PNG", locationX, 50, size, size)
+        doc.addImage(amplitudeIMG, "PNG", locationX, 50, size, size);
         //frequency
-        doc.addImage(frequencyIMG, "PNG", locationX, 60, size, size)
+        doc.addImage(frequencyIMG, "PNG", locationX, 60, size, size);
+        //phase
+        doc.addImage(phaseIMG, "PNG", locationX, 70, size, size);
     }
 }
 

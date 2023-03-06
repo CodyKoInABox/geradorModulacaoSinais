@@ -18,6 +18,9 @@ function main(){
         //hide frequency modulation
         document.getElementById("frequencyIMG"+l).style.display = "none";
 
+        //hide phase modulation
+        document.getElementById("phaseIMG"+l).style.display = "none";
+
     }
 
     //chama a funcao que mostra as imagens, e envia para ela o input do usuario em forma de valor binario
@@ -108,6 +111,10 @@ function printImages(input){
             //show frequency modulation
             document.getElementById("frequencyIMG"+counter).style.display = "inline"; 
             document.getElementById("frequencyIMG"+counter).src="assets/frequencyIMG"+temp[j]+".png";
+
+            //show phase modulation
+            document.getElementById("phaseIMG"+counter).style.display = "inline"; 
+            document.getElementById("phaseIMG"+counter).src="assets/phaseIMG"+temp[j]+".png";
         }
     }
 

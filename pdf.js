@@ -70,7 +70,7 @@ function addImages(){
         //let locationX = j * 3.7 - 3.4;
         //let size = 3.7;
 
-        let size = Math.min(8, Math.max(3.7, 297 / counter ));
+        let size = parseFloat(Math.min(8, Math.max(3.7, 297 / counter )).toFixed(1));
         let margin = (297 - size * counter) / 2;
         console.log(size);
         let locationX = margin + j * size - size;

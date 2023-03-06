@@ -34,12 +34,20 @@ img{
     display: none;
 }
 .name{
+    margin: none;
+    padding: none;
     position: fixed;
     font-size: large;
     left: 10px;
     bottom: -5px;
     font-weight: 500;
-
+}
+.github{
+    position: fixed;
+    font-size: larger;
+    right: 10px;
+    bottom: 10px;
+    font-weight: 500;
 }
 #buttonPDF{
     margin-top: 40px;

@@ -73,7 +73,7 @@ function addImages(){
         let locationX = margin + j * size - size;
 
         //binary
-        doc.addImage(binary, "PNG", locationX, 30, size, size);
+        doc.addImage(binary, "PNG", locationX, 30+size, size, size);
         //binary Image
         doc.addImage(binaryIMG, "PNG", locationX, 40+size, size, size);
         //amplitude
